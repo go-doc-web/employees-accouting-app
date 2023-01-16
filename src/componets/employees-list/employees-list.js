@@ -1,14 +1,12 @@
 import EmployeesListItem from '../employees-list-item/employees-list-item';
 import './employees-list.css';
 
-function EmployeesList() {
-  return (
-    <ul className="app-list list-group">
-      <EmployeesListItem />
-      <EmployeesListItem />
-      <EmployeesListItem />
-    </ul>
-  );
+function EmployeesList({ items }) {
+  const elements = items.map(({ id, ...props }) => (
+    <EmployeesListItem key={id} {...props} />
+  ));
+  console.log(items);
+  return <ul className="app-list list-group">{elements}</ul>;
 }
 
 export default EmployeesList;

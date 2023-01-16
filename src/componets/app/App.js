@@ -5,6 +5,8 @@ import AppFilter from '../app-filter/app-filter';
 import EmployeesList from '../employees-list/employees-list';
 import EmployeesAddForm from '../emploeyees-add-form/employees-add-form';
 
+import emploeesItems from '../../Data/emploeesItems.json';
+
 function App() {
   return (
     <div className="app">
@@ -14,7 +16,7 @@ function App() {
         <SearchPenel />
         <AppFilter />
       </div>
-      <EmployeesList />
+      <EmployeesList items={emploeesItems} />
 
       <EmployeesAddForm />
     </div>
