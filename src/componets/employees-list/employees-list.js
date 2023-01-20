@@ -5,7 +5,7 @@ function EmployeesList({ items }) {
   const elements = items.map(({ id, ...itemProps }) => (
     <EmployeesListItem key={id} {...itemProps} />
   ));
-  console.log(items);
+
   return <ul className="app-list list-group">{elements}</ul>;
 }
 

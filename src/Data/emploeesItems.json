@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Oleg",
     "salary": 900,
-    "increase": true
+    "increase": false
   },
   {
     "id": "2",

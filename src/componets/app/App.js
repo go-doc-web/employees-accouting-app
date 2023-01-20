@@ -6,6 +6,7 @@ import EmployeesList from '../employees-list/employees-list';
 import EmployeesAddForm from '../emploeyees-add-form/employees-add-form';
 
 import emploeesItems from '../../Data/emploeesItems.json';
+// import Practic from '../Practic/Practic';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <EmployeesList items={emploeesItems} />
 
       <EmployeesAddForm />
+      {/* <Practic /> */}
     </div>
   );
 }
