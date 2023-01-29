@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import { Component } from 'react';
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
+// import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import './employees-list-item.css';
 
 class EmployeesListItem extends Component {
@@ -22,7 +22,8 @@ class EmployeesListItem extends Component {
   };
 
   render() {
-    const { name, salary } = this.props;
+    const { selectUser, onIncrease } = this;
+    const { name, salary, onDeleteItem } = this.props;
     const { increase, isLabelLike } = this.state;
 
     let isIncrease = increase ? 'increase' : '';
@@ -31,7 +32,7 @@ class EmployeesListItem extends Component {
       <li
         className={`list-group-item d-flex justify-content-between ${LabelLike} ${isIncrease} `}
       >
-        <span onClick={this.selectUser} className="list-group-item-label">
+        <span onClick={selectUser} className="list-group-item-label">
           {name}
         </span>
         <input
@@ -43,12 +44,16 @@ class EmployeesListItem extends Component {
           <button
             type="button"
             className="btn-cookie btn-sm "
-            onClick={this.onIncrease}
+            onClick={onIncrease}
           >
             <i className="fas fa-cookie"></i>
           </button>
 
-          <button type="button" className="btn-trash btn-sm ">
+          <button
+            onClick={onDeleteItem}
+            type="button"
+            className="btn-trash btn-sm "
+          >
             <i className="fas fa-trash"></i>
           </button>
           <i className="fas fa-star"></i>
